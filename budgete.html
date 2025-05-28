@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Travels - Package Selector</title>
+  <style>
+    :root {
+      --primary: #b49c73; /* Gold inspired accent */
+      --secondary: #4a4e69; /* Muted blue-gray */
+      --accent: #eaeaea; /* Marble white */
+      --light: #fefefe; /* Pure white */
+      --dark: #2c2c2c; /* Classic contrast */
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--accent);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      color: var(--secondary);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .subtitle {
+      color: var(--primary);
+      font-size: 1.2rem;
+    }
+
+    .packages-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .package {
+      background: var(--light);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      width: 350px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .package:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .package-header {
+      padding: 1.5rem;
+      text-align: center;
+      color: var(--light);
+    }
+
+    .luxury .package-header {
+      background: linear-gradient(135deg, #d9c3a8 0%, #f8f5f2 100%);
+      color: #4a4e69;
+    }
+
+    .standard .package-header {
+      background: linear-gradient(135deg, #c9ccd5 0%, #e2e6ec 100%);
+      color: #2c2c2c;
+    }
+
+    .budget .package-header {
+      background: linear-gradient(135deg, #f4e6d9 0%, #fefefe 100%);
+      color: #6b705c;
+    }
+
+    .package-title {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-price {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    .package-price span {
+      font-size: 1rem;
+      font-weight: normal;
+    }
+
+    .package-body {
+      padding: 1.5rem;
+    }
+
+    .facilities {
+      list-style: none;
+      margin-bottom: 2rem;
+    }
+
+    .facilities li {
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+    }
+
+    .facilities li:last-child {
+      border-bottom: none;
+    }
+
+    .facilities li::before {
+      content: "✓";
+      color: var(--primary);
+      margin-right: 0.8rem;
+      font-weight: bold;
+    }
+
+    .select-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: var(--primary);
+      color: var(--light);
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .select-btn:hover {
+      background-color: var(--secondary);
+    }
+
+    @media (max-width: 768px) {
+      .packages-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .package {
+        width: 100%;
+        max-width: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>select your budget</h1>
+      <p class="subtitle">Choose the perfect travel package based on your budget</p>
+    </header>
+
+    <div class="packages-container">
+      <!-- Luxury Package -->
+      <div class="package luxury">
+        <div class="package-header">
+          <h2 class="package-title">Premium Package</h2>
+          <div class="package-price">1 lakh<span></span></div>
+          <p>High Budget - Premium Experience</p>
+        </div>
+        <div class="package-body">
+          <ul class="facilities">
+            <li>5-star hotel accommodation</li>
+      <li>Private guided tours</li>
+      <li>All meals included (multi-cuisine)</li>
+      <li>Airport pick-up and drop</li>
+      <li>Exclusive access to events</li>
+      <li>Spa and wellness sessions</li>
+          </ul>
+          <a href="#" class="select-btn">Select Package</a>
+        </div>
+      </div>
+
+      <!-- Standard Package -->
+      <div class="package standard">
+        <div class="package-header">
+          <h2 class="package-title">Golden Package</h2>
+          <div class="package-price">₹50,000<span></span></div>
+          <p>Medium Budget - Comfortable Travel</p>
+        </div>
+        <div class="package-body">
+          <ul class="facilities">
+            <li>3-star hotel accommodation</li>
+      <li>Local sightseeing tours</li>
+      <li>Breakfast and dinner included</li>
+      <li>Shared transport</li>
+      <li>Tour guide support</li>
+      <li>Free Wi-Fi in hotel</li>
+          </ul>
+          <a href="#" class="select-btn">Select Package</a>
+        </div>
+      </div>
+
+      <!-- Budget Package -->
+      <div class="package budget">
+        <div class="package-header">
+          <h2 class="package-title">Silver Package</h2>
+          <div class="package-price">₹25,000<span></span></div>
+          <p>Low Budget - Essential Experience</p>
+        </div>
+        <div class="package-body">
+          <ul class="facilities">
+            <li>Clean and safe budget stays</li>
+      <li>Group sightseeing tour</li>
+      <li>Breakfast included</li>
+      <li>Standard bus/van transport</li>
+      <li>Local assistance</li>
+      <li>Flexible itinerary</li>
+          </ul>
+          <a href="#" class="select-btn">Select Package</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
